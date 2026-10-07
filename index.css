@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-display: 'Sora', 'Manrope', system-ui, sans-serif;
+
+  /* Deep navy — trust, banking */
+  --color-primary-50: #eef2f9;
+  --color-primary-100: #dbe3f1;
+  --color-primary-200: #b9c7e2;
+  --color-primary-300: #8ea3cc;
+  --color-primary-400: #5f7bb0;
+  --color-primary-500: #3d5a94;
+  --color-primary-600: #24427a;
+  --color-primary-700: #1a3363;
+  --color-primary-800: #13264b;
+  --color-primary-900: #0c1a36;
+
+  /* Gold accent */
+  --color-gold-100: #f7edd2;
+  --color-gold-400: #e0b85a;
+  --color-gold-500: #c99a3a;
+
+  --color-success-50: #ecf8f2;
+  --color-success-100: #d3f0e1;
+  --color-success-300: #86d1ab;
+  --color-success-500: #1f9d62;
+  --color-success-600: #15834f;
+  --color-success-700: #0f6a40;
+
+  --color-danger-50: #fdf1f0;
+  --color-danger-100: #fbe0dd;
+  --color-danger-300: #f0a49c;
+  --color-danger-400: #e57b70;
+  --color-danger-500: #d9493b;
+  --color-danger-600: #c23a2d;
+  --color-danger-700: #9e2c21;
+
+  --color-warning-300: #ecc27a;
+  --color-warning-500: #d98e14;
+  --color-warning-600: #b8730a;
+
+  /* Warm neutrals */
+  --color-neutral-50: #f6f5f1;
+  --color-neutral-100: #efede7;
+  --color-neutral-200: #e3e0d8;
+  --color-neutral-300: #ccc8bd;
+  --color-neutral-400: #9d998e;
+  --color-neutral-500: #737067;
+  --color-neutral-600: #56534c;
+  --color-neutral-700: #3d3b36;
+  --color-neutral-800: #282724;
+  --color-neutral-900: #171715;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  background: var(--color-neutral-50);
+  color: var(--color-neutral-900);
+  font-feature-settings: "tnum" 1, "cv11" 1;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+/* Professional card surface */
+.bg-white.rounded-2xl,
+.bg-white.rounded-xl.border {
+  box-shadow: 0 1px 2px rgb(23 23 21 / 0.04), 0 4px 16px -6px rgb(19 38 75 / 0.08);
+}
+
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--color-gold-400);
+  outline-offset: 2px;
+}
+
+input, select, textarea { font-family: inherit; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+.safe-top {
+  padding-top: env(safe-area-inset-top);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.safe-left {
+  padding-left: env(safe-area-inset-left);
+}
+
+.safe-right {
+  padding-right: env(safe-area-inset-right);
+}
+
+.safe-area {
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.3s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.2s ease-out;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-300);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-neutral-400);
+}
